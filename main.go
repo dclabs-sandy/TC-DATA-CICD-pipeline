@@ -18,4 +18,5 @@ func main() {
 	log.Printf("Listening on port 8000...")
 	http.HandleFunc("/version", versionHandler)
 	http.ListenAndServe(":8000", nil)
+	log.Printf("Listening on port 8000...closed")
 }
