@@ -2,7 +2,7 @@
 
 ![pipeline-screenshot](images/pipeline-screenshot.png)
 
-This repository provides an easy-to-deploy pipeline for the development, testing, building and deployment of Tech College applications
+This repository provides an easy-to-deploy pipeline for the development, testing, building and deployment for Tech College applications
 
 
 Services Used:
