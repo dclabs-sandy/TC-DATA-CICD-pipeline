@@ -2,7 +2,8 @@
 
 ![pipeline-screenshot](images/pipeline-screenshot.png)
 
-This repository provides an easy-to-deploy pipeline for the development, testing, building and deployment of applications written in Go. Although this example is tailored to Go, it can be easily modified to deploy applications written in other languages too.
+This repository provides an easy-to-deploy pipeline for the development, testing, building and deployment of Tech College applications
+
 
 Services Used:
  
