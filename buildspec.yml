@@ -5,7 +5,8 @@ phases:
   install: 
     commands:
       - go get -u github.com/golang/lint/golint
-
+      - echo Build started on `date`
+      - echo Compiling the Python code...
   pre_build: 
     commands:
 
@@ -14,6 +15,7 @@ phases:
 
       # Run all tests included with our application
       - go test
+      - python test_primes.py
 
   build:
     commands:
