@@ -29,6 +29,7 @@ func TestVersionHandler(t *testing.T) {
 	}
 
 	// Check the response body is what we expect.
+	// Check the response body is what we expect.
 	expected := version
 	if rr.Body.String() != expected {
 		t.Errorf("handler returned unexpected body: got %v want %v",
