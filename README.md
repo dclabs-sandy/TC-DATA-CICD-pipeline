@@ -2,8 +2,7 @@
 
 ![pipeline-screenshot](images/pipeline-screenshot.png)
 
-This repository provides an easy-to-deploy pipeline for the development, testing, building and deployment for Tech College, Data applications
-
+This repository provides an easy-to-deploy pipeline for the development, testing, building and deployment for Tech College participants hands-on assessment.
 
 Services Used:
  
@@ -34,8 +33,7 @@ Services Used:
  * [Stage: Deploy to Staging](#stage-deploy-to-staging)
  * [Stage: Manual Approvals (optional)](#stage-manual-approvals)
  * [Stage: Deploy to Production](#stage-deploy-to-production)
-* [Contributing](#contributing)
-* [License](#license)
+
 
 ## What's in the box?
  
