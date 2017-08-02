@@ -1,18 +1,17 @@
-# Deployment Pipeline for Go Applications on AWS
+# Deployment Pipeline
 
 ![pipeline-screenshot](images/pipeline-screenshot.png)
 
-This repository provides an easy-to-deploy pipeline for the development, testing, building and deployment for Tech College applications
+This repository provides an easy-to-deploy pipeline for the development, testing, building and deployment for Tech College, Data applications
 
 
 Services Used:
  
  * [AWS CodePipeline](https://aws.amazon.com/codepipeline/) for pipeline creation.
- * [AWS CodeBuild](https://aws.amazon.com/codebuild/) for testing and building your Go application(s).
+ * [AWS CodeBuild](https://aws.amazon.com/codebuild/) for testing and building the application(s).
  * [AWS CloudFormation](https://aws.amazon.com/cloudformation/) for deploying infrastructure (Infrastructure-as-Code).
  * [AWS CodeDeploy](https://aws.amazon.com/codedeploy/) for zero downtime deployments of your application(s). 
 
-This pipeline allows you easily apply [continuous delivery](https://aws.amazon.com/devops/continuous-delivery/) or [continuous deployment](https://aws.amazon.com/devops/continuous-delivery/) principles to your development lifecycle. 
 
 ![cicd-overview](images/cicd-overview.png)
 
@@ -50,14 +49,14 @@ A pipeline will be configured in [AWS CodePipeline](https://aws.amazon.com/codep
 
  - Run any tests included in the project (using `go test`).
  - Check for code lint errors (using `golint`).
- - Build your Go application.
+ - Build your application.
  - Archive all build artifacts to S3.
 
 To read or modify the [AWS CodeBuild](https://aws.amazon.com/codebuild) configuration, see [buildspec.yml](buildspec.yml).
  
 ### Infrastructure as code
 
-[AWS CloudFormation](https://aws.amazon.com/cloudformation) will be used to deploy a staging and production environment suitable for hosting Go applications on AWS. This is incorporated into the same pipeline as the application development. Infrastructure for the staging and production environments will be automatically deployed as required.
+[AWS CloudFormation](https://aws.amazon.com/cloudformation) will be used to deploy a staging and production environment suitable for hosting applications on AWS. This is incorporated into the same pipeline as the application development. Infrastructure for the staging and production environments will be automatically deployed as required.
 
 By default, this will configure:
 
@@ -74,9 +73,9 @@ You can read or modify the infrastructure deployed in [cloudformation/infrastruc
 
 ### Zero-downtime application deployment (staging/production)
 
-A sample Go application is included (see [main.go](main.go)) that acts as a simple webserver. 
+A sample application (Python & Go) is included that acts as a simple webserver. 
 
-When changes are made to the Go application, [AWS CodePipeline](https://aws.amazon.com/codepipeline) will automatically take the changes through the deployment pipeline.
+When changes are made to the application, [AWS CodePipeline](https://aws.amazon.com/codepipeline) will automatically take the changes through the deployment pipeline.
 
 [AWS CodeBuild](https://aws.amazon.com/codebuild) will run all tests, build the application, and then archive successful builds to [Amazon S3](https://aws.amazon.com/s3).
 
@@ -138,7 +137,7 @@ After the [AWS CloudFormation](https://aws.amazon.com/cloudformation) stack has 
 
 #### 3. Develop, deploy, iterate!
 
-Now that your pipeline is setup, you can start the fun part:  developing your application! Make some changes to the example Go application in [main.go](main.go), and then commit the changes to your [GitHub](https://github.com) repository.
+Now that your pipeline is setup, you can start the fun part:  developing your application! Make some changes to the example application in [main.go](main.go), and then commit the changes to your [GitHub](https://github.com) repository.
 
 In the [AWS CodePipeline](https://aws.amazon.com/codepipeline) console, you should see the changes you've made flow through the pipeline.
 
@@ -192,8 +191,3 @@ This stage deploys a whole new environment (everything in the architecture diagr
 
 The first time the pipeline stage runs, it will create the environment from scratch. On future runs of the pipeline, it will apply any updates via a [CloudFormation stack update](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks.html).
 
-## Want to contribute?
-
-You can [create a GitHub issue](https://github.com/awslabs/golang-deployment-pipeline/issues/new) for any feature requests, bugs, or documentation improvements. 
-
-Where possible, please [submit a pull request](https://help.github.com/articles/creating-a-pull-request-from-a-fork/) for the change. 
